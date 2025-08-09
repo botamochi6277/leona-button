@@ -1,0 +1,203 @@
+{
+    "voices": [
+        {
+            "name": "konnichiwa_konbanwa_ohayo",
+            "file_name": "konnichiwa_konbanwa_ohayo.mp3",
+            "text": "こんにちは、こんばんは、おはようございます",
+            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m45s",
+            "tags": [
+                "greeting"
+            ]
+        },
+        {
+            "name": "shishigami_leona_desu",
+            "file_name": "shishigami_leona_desu.mp3",
+            "text": "獅子神レオナです!",
+            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m45s",
+            "tags": [
+                "greeting"
+            ]
+        },
+        {
+            "name": "yama_wo_kezutte",
+            "file_name": "yama_wo_kezutte.mp3",
+            "text": "山を削っていきたいと思います",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=4m15s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "chittyakunai",
+            "file_name": "chittyakunai.mp3",
+            "text": "ちっちゃくない?",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=14m11s",
+            "tags": [
+                "misc"
+            ]
+        },
+        {
+            "name": "motto_ageteyaro",
+            "file_name": "motto_ageteyaro.mp3",
+            "text": "もっとあげてやろう",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=14m33s",
+            "tags": [
+                "misc"
+            ]
+        },
+        {
+            "name": "hi_ok",
+            "file_name": "hi_ok.mp3",
+            "text": "はい、OK~!",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=27m01s",
+            "tags": [
+                "misc"
+            ]
+        },
+        {
+            "name": "abunai",
+            "file_name": "abunai.mp3",
+            "text": "あぶない!",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=27m17s",
+            "tags": [
+                "warning"
+            ]
+        },
+        {
+            "name": "kyoufu_tte_sugu_sokoni",
+            "file_name": "kyoufu_tte_sugu_sokoni.mp3",
+            "text": "恐怖ってすぐそこにあるんですよ",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=27m54s",
+            "tags": [
+                "warning"
+            ]
+        },
+        {
+            "name": "ame_ga_futte_kimashitayo",
+            "file_name": "ame_ga_futte_kimashitayo.mp3",
+            "text": "雨が降ってきましたよ",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=36m03s",
+            "tags": [
+                "weather"
+            ]
+        },
+        {
+            "name": "nante_osoroshii_basho_nanda",
+            "file_name": "nante_osoroshii_basho_nanda.mp3",
+            "text": "なんて恐ろしい場所なんだ",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=43m56s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "kitaaaa",
+            "file_name": "kitaaaa.mp3",
+            "text": "きたあああああああああ",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=1h19m47s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "dansa_ga_areba_zenbu_yama",
+            "file_name": "dansa_ga_areba_zenbu_yama.mp3",
+            "text": "段差があれば全部山",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=1h21m15s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "ehho_ehho",
+            "file_name": "ehho_ehho.mp3",
+            "text": "ｴｯﾎｴｯﾎ",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=1h23m7s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "gomenne",
+            "file_name": "gomenne.mp3",
+            "text": "ごめんね",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=1h27m43s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "yononaka_niha_ironna_kyun",
+            "file_name": "yononaka_niha_ironna_kyun.mp3",
+            "text": "世の中にはいろんなキュンキュンがありまして",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h07m46s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "atta_kiga_shitan_dakedo",
+            "file_name": "atta_kiga_shitan_dakedo.mp3",
+            "text": "あった気がしたんだけど",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h44m08s",
+            "tags": [
+                "minecraft",
+                "joke"
+            ]
+        },
+        {
+            "name": "omoshiro",
+            "file_name": "omoshiro.mp3",
+            "text": "おもしろw",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h44m18s",
+            "tags": [
+                "fanny"
+            ]
+        },
+        {
+            "name": "kawaii_yo",
+            "file_name": "kawaii_yo.mp3",
+            "text": "かわいいよ",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h08m30s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "gaman_shina",
+            "file_name": "gaman_shina.mp3",
+            "text": "我慢しな",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h45m19s",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "shishigami_leona_desu_2",
+            "file_name": "shishigami_leona_desu_2.mp3",
+            "text": "獅子神レオナです!",
+            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m45s",
+            "tags": [
+                "greeting"
+            ]
+        },
+        {
+            "name": "good_morning",
+            "file_name": "good_morning.mp3",
+            "text": "グッドモーニング!",
+            "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk=3m14s",
+            "tags": [
+                "greeting"
+            ]
+        },
+        {
+            "name": "zakozako",
+            "file_name": "zakozako.mp3",
+            "text": "ザコザコザコザコ......",
+            "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk&t=30m31s",
+            "tags": [
+                "mimukawa"
+            ]
+        }
+    ]
+}
