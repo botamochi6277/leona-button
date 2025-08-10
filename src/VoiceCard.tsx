@@ -9,9 +9,14 @@ import {
   CardHeader,
   CardActions,
 } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
+import Fab from "@mui/material/Fab";
+
 // icons
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
 
 import TagIcon from "@mui/icons-material/Tag";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
@@ -80,6 +85,15 @@ const VoiceCard = (props: { voice: Voice }) => {
 
   const [audioPlaying, setAudioPlaying] = React.useState(false);
 
+  const buttonSx = {
+    ...(audioPlaying && {
+      bgcolor: green[500],
+      "&:hover": {
+        bgcolor: green[700],
+      },
+    }),
+  };
+
   React.useEffect(() => {
     if (audioPlaying) {
       audio?.play().catch(() => {
@@ -102,6 +116,36 @@ const VoiceCard = (props: { voice: Voice }) => {
     };
   }, [audio, setAudioPlaying]);
 
+  const btn = (
+    <Box sx={{ m: 1, position: "relative" }}>
+      <Fab
+        aria-label="save"
+        color="primary"
+        sx={buttonSx}
+        size="small"
+        onClick={() => {
+          setAudioPlaying((prev) => !prev);
+        }}
+      >
+        {audioPlaying ? <MusicNoteIcon /> : <PlayArrowIcon />}
+      </Fab>
+      {audioPlaying && (
+        <CircularProgress
+          size={48}
+          sx={{
+            color: green[200],
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            marginTop: "-24px",
+            marginLeft: "-24px",
+            zIndex: 1,
+          }}
+        />
+      )}
+    </Box>
+  );
+
   return (
     <Card
       sx={{ flexDirection: "column", height: "100%" }}
@@ -109,20 +153,7 @@ const VoiceCard = (props: { voice: Voice }) => {
     >
       <CardHeader
         title={voice.text}
-        avatar={
-          <Avatar
-            sx={{ bgcolor: audioPlaying ? "success.main" : "primary.main" }}
-          >
-            <IconButton
-              onClick={() => {
-                setAudioPlaying((prev) => !prev);
-              }}
-              loading={audioPlaying}
-            >
-              <PlayArrowIcon />
-            </IconButton>
-          </Avatar>
-        }
+        avatar={btn}
         action={
           <IconButton
             aria-label="play"
