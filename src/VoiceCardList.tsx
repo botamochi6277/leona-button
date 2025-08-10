@@ -6,8 +6,8 @@ import {
   Typography,
   ListItem,
   ListItemText,
+  Grid,
 } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
 
 // icons
 import PinIcon from "@mui/icons-material/Pin";
@@ -105,7 +105,7 @@ export default function VoiceCardList(props: { voices: Voice[] }) {
 
       <Grid container spacing={2}>
         {items.map((item, idx) => (
-          <Grid xs={12} sm={6} md={6} key={idx}>
+          <Grid size={{ xs: 12, sm: 6 }} key={idx}>
             {item}
           </Grid>
         ))}

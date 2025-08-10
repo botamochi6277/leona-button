@@ -2,21 +2,12 @@ import * as React from "react";
 // mui
 import {
   Card,
-  CardContent,
-  CardMedia,
-  CardActionArea,
-  Link,
-  Typography,
   Box,
-  Stack,
   Chip,
   IconButton,
-  Button,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
   Avatar,
+  CardHeader,
+  CardActions,
 } from "@mui/material";
 // icons
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -82,133 +73,80 @@ const ChipsBox = (props: {
   );
 };
 
-const UrlButton = (props: { url: string; text?: string }) => {
-  return (
-    <Button
-      href={props.url}
-      target="_blank"
-      rel="noopener"
-      variant="outlined"
-      color="secondary"
-      size="small"
-      startIcon={<LiveTvIcon />}
-      sx={{ marginTop: 1 }}
-    >
-      {props.text ?? "Source"}
-    </Button>
-  );
-};
-
-function VoiceCard1(props: { voice: Voice }) {
-  const voice = props.voice;
-  return (
-    <Card sx={{ display: "flex" }}>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
-            {voice.text}
-          </Typography>
-          {/* <Typography
-            variant="subtitle1"
-            component="div"
-            sx={{ color: "text.secondary" }}
-          >
-            voice.text
-          </Typography> */}
-        </CardContent>
-        <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-          </IconButton>
-        </Box>
-      </Box>
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image={`https://placehold.jp/FF9D08/f7f7f7/150x150.png?text=${voice.text[0]}`}
-        alt={voice.text}
-      />
-    </Card>
-  );
-}
-
-const VoiceCard2 = (props: { voice: Voice }) => {
-  // https://stackoverflow.com/questions/57818778/how-to-make-material-ui-cardactions-always-stick-to-the-bottom-of-parent
-  // https://stackoverflow.com/questions/55824260/same-height-cards-in-material-ui
-  const voice = props.voice;
-
-  // const img_path = ss ? `./prototypes/${ss[ss.length - 1]}` : null;
-
-  return (
-    <Card
-      sx={{ flexDirection: "column", height: "100%" }}
-      key={`${voice.name}-card`}
-    >
-      <CardContent>
-        <Typography component="div" variant="h6">
-          {voice.text}
-        </Typography>
-
-        <Box sx={{ marginBottom: 1 }}>
-          <Stack direction="row" alignItems="center" spacing={0.5}>
-            {voice.tags.map((tag) => (
-              <Chip size="small" key={`tag-${tag}`} label={tag} />
-            ))}
-          </Stack>
-        </Box>
-        <UrlButton url={voice.url} />
-        <Button startIcon={<PlayArrowIcon />} variant="contained">
-          Play
-        </Button>
-      </CardContent>
-    </Card>
-  );
-};
-
 const VoiceCard = (props: { voice: Voice }) => {
   const voice = props.voice;
 
-  // const img_path = ss ? `./prototypes/${ss[ss.length - 1]}` : null;
+  const audio = new Audio(`voices/${voice.file_name}`);
+
+  const [audioPlaying, setAudioPlaying] = React.useState(false);
+
+  React.useEffect(() => {
+    if (audioPlaying) {
+      audio?.play().catch(() => {
+        throw new Error(`${voice.file_name} cannot be played`);
+      });
+    } else {
+      audio?.pause();
+    }
+  }, [audio, audioPlaying]);
+
+  React.useEffect(() => {
+    const onEnded = () => {
+      setAudioPlaying(false);
+      audio.pause();
+    };
+
+    audio.addEventListener("ended", onEnded);
+    return () => {
+      audio.removeEventListener("ended", onEnded);
+    };
+  }, [audio, setAudioPlaying]);
 
   return (
     <Card
       sx={{ flexDirection: "column", height: "100%" }}
       key={`${voice.name}-card`}
     >
-      <List>
-        <ListItem
-          secondaryAction={
+      <CardHeader
+        title={voice.text}
+        avatar={
+          <Avatar
+            sx={{ bgcolor: audioPlaying ? "success.main" : "primary.main" }}
+          >
             <IconButton
-              edge="end"
-              aria-label="play"
-              href={voice.url}
-              target="_blank"
-              rel="noopener"
-              color="secondary"
+              onClick={() => {
+                setAudioPlaying((prev) => !prev);
+              }}
+              loading={audioPlaying}
             >
-              <LiveTvIcon color="secondary" />
+              <PlayArrowIcon />
             </IconButton>
-          }
-        >
-          <ListItemAvatar>
-            <Avatar sx={{ bgcolor: "primary.main" }}>
-              <IconButton>
-                <PlayArrowIcon />
-              </IconButton>
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText
-            primary={voice.text}
-            secondary={
-              <ChipsBox
-                items={voice.tags}
-                icon={<TagIcon />}
-                color="secondary"
-              />
-            }
-          />
-        </ListItem>
-      </List>
+          </Avatar>
+        }
+        action={
+          <IconButton
+            aria-label="play"
+            href={voice.url}
+            target="_blank"
+            rel="noopener"
+            color="secondary"
+          >
+            <LiveTvIcon color="secondary" />
+          </IconButton>
+        }
+      />
+      {/* <CardContent>
+        <CardMedia
+          component={"audio"}
+          controls
+          controlsList="nodownload"
+          src={`voices/${voice.file_name}`}
+        ></CardMedia>
+      </CardContent> */}
+
+      <CardActions>
+        <ChipsBox items={voice.tags} icon={<TagIcon />} color="secondary" />
+      </CardActions>
     </Card>
   );
 };

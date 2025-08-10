@@ -3,25 +3,34 @@
         {
             "name": "konnichiwa_konbanwa_ohayo",
             "file_name": "konnichiwa_konbanwa_ohayo.mp3",
-            "text": "こんにちは、こんばんは、おはようございます",
+            "text": "こんにちは、こんばんは、おはようございま~~~す",
             "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m45s",
             "tags": [
                 "greeting"
             ]
         },
         {
-            "name": "shishigami_leona_desu",
-            "file_name": "shishigami_leona_desu.mp3",
-            "text": "獅子神レオナです!",
-            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m45s",
+            "name": "react_shozoku_no",
+            "file_name": "react_shozoku_no.mp3",
+            "text": "Re:AcT所属のVtuber",
+            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m49s",
             "tags": [
                 "greeting"
             ]
         },
         {
-            "name": "yama_wo_kezutte",
-            "file_name": "yama_wo_kezutte.mp3",
-            "text": "山を削っていきたいと思います",
+            "name": "shishigami_leona_deeeeesu",
+            "file_name": "shishigami_leona_deeeeesu.mp3",
+            "text": "獅子神レオナで~~~す!",
+            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m51s",
+            "tags": [
+                "greeting"
+            ]
+        },
+        {
+            "name": "ano_mieru_yama_wo_kezutte",
+            "file_name": "ano_mieru_yama_wo_kezutte.mp3",
+            "text": "あの見える山を削っていきたいと思います",
             "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=4m15s",
             "tags": [
                 "minecraft"
@@ -66,7 +75,7 @@
         {
             "name": "kyoufu_tte_sugu_sokoni",
             "file_name": "kyoufu_tte_sugu_sokoni.mp3",
-            "text": "恐怖ってすぐそこにあるんですよ",
+            "text": "恐怖ってすぐそこにあったんだ",
             "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=27m54s",
             "tags": [
                 "warning"
@@ -138,7 +147,7 @@
         {
             "name": "atta_kiga_shitan_dakedo",
             "file_name": "atta_kiga_shitan_dakedo.mp3",
-            "text": "あった気がしたんだけど",
+            "text": "あった気がしたんだけど...木が...",
             "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h44m08s",
             "tags": [
                 "minecraft",
@@ -152,15 +161,6 @@
             "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h44m18s",
             "tags": [
                 "fanny"
-            ]
-        },
-        {
-            "name": "kawaii_yo",
-            "file_name": "kawaii_yo.mp3",
-            "text": "かわいいよ",
-            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=2h08m30s",
-            "tags": [
-                "minecraft"
             ]
         },
         {
@@ -197,6 +197,26 @@
             "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk&t=30m31s",
             "tags": [
                 "mimukawa"
+            ]
+        }
+    ],
+    "videos": [
+        {
+            "id": "XTS0IEd-R3o",
+            "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o",
+            "title": "【 Minecraft 】山がレオを呼んでいる、早く削れと。【獅子神レオナ/Re:AcT】",
+            "date": "2025-07-17",
+            "tags": [
+                "minecraft"
+            ]
+        },
+        {
+            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc",
+            "id": "zdtHaG42jEc",
+            "title": "【 -`🎙 歌枠/Singing 】じめじめじめじめ、【 獅子神レオナ/Re:AcT】",
+            "date": "2025-06-16",
+            "tags": [
+                "singing"
             ]
         }
     ]
