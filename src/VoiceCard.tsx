@@ -5,12 +5,10 @@ import {
   Box,
   Chip,
   IconButton,
-  Avatar,
   CardHeader,
   CardActions,
 } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import { green } from "@mui/material/colors";
 import Fab from "@mui/material/Fab";
 
 // icons
@@ -87,9 +85,9 @@ const VoiceCard = (props: { voice: Voice }) => {
 
   const buttonSx = {
     ...(audioPlaying && {
-      bgcolor: green[500],
+      bgcolor: "success.main",
       "&:hover": {
-        bgcolor: green[700],
+        bgcolor: "secondary.main",
       },
     }),
   };
@@ -133,7 +131,7 @@ const VoiceCard = (props: { voice: Voice }) => {
         <CircularProgress
           size={48}
           sx={{
-            color: green[200],
+            color: "success.main",
             position: "absolute",
             top: "50%",
             left: "50%",
@@ -150,6 +148,7 @@ const VoiceCard = (props: { voice: Voice }) => {
     <Card
       sx={{ flexDirection: "column", height: "100%" }}
       key={`${voice.name}-card`}
+      variant="outlined"
     >
       <CardHeader
         title={voice.text}
