@@ -117,7 +117,7 @@ const VoiceCard = (props: { voice: Voice }) => {
   }, [audio, setAudioPlaying]);
 
   const btn = (
-    <Box sx={{ m: 1, position: "relative" }}>
+    <Box sx={{ position: "relative" }}>
       <Fab
         aria-label="save"
         color="primary"

@@ -10,10 +10,6 @@ import {
 } from "@mui/material";
 
 // icons
-import PinIcon from "@mui/icons-material/Pin";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import UpdateIcon from "@mui/icons-material/Update";
 import { Abc as AbcIcon } from "@mui/icons-material";
 
 // assets

@@ -14,7 +14,7 @@ import MyTabs from "./MyTabs";
 import VoiceCardList from "./VoiceCardList";
 
 // assets
-import my_theme from "./theme";
+import { myTheme, myPalette } from "./theme";
 import voiceData from "./assets/voices.json";
 
 // icons
@@ -26,17 +26,28 @@ import HubIcon from "@mui/icons-material/Hub";
 function App() {
   const [theme, setTheme] = React.useState(
     createTheme({
-      ...my_theme,
+      ...myTheme,
       palette: {
+        ...myPalette,
         mode: "dark",
       },
     })
   );
   const toggleTheme = (theme: any) => {
     if (theme.palette.mode === "dark") {
-      setTheme(createTheme({ ...my_theme, palette: { mode: "light" } }));
+      setTheme(
+        createTheme({
+          ...myTheme,
+          palette: { ...myPalette, mode: "light" },
+        })
+      );
     } else {
-      setTheme(createTheme({ ...my_theme, palette: { mode: "dark" } }));
+      setTheme(
+        createTheme({
+          ...myTheme,
+          palette: { ...myPalette, mode: "dark" },
+        })
+      );
     }
   };
 
