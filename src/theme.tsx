@@ -2,13 +2,14 @@ import { createTheme } from "@mui/material/styles";
 
 // A custom theme for this app
 // shishigami orange: #FC9A07
+// Material palette generator: https://m2.material.io/inline-tools/color/
 
 const myPalette = {
   primary: {
     main: "#FC9A07",
   },
   secondary: {
-    main: "#0769fc",
+    main: "#008cff",
   },
   error: {
     main: "#fc1f07",

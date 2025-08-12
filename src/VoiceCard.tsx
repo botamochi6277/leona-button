@@ -196,6 +196,7 @@ const VoiceCard = (props: { voice: Voice; video?: Video }) => {
             href={voice.url}
             target="_blank"
             rel="noopener"
+            color="secondary"
             startIcon={<LiveTvIcon />}
           >
             {props.video ? props.video?.title : "Video not found"}
