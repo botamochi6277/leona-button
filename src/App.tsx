@@ -67,9 +67,7 @@ function App() {
           <TeamHeader
             team_name={"Leona Button"}
             user_name={""}
-            avatar_img={
-              "https://dummyimage.com/200x200/fc9a07/2b2b2b&text=Leona"
-            }
+            avatar_img={"leona.jpg"}
             description={
               "Leona Buttonはしぐれういボタンに触発されて開発した, Re:AcT所属のVtuber獅子神レオナさんの音声切り抜きを集めたサイトです. 音声はyoutubeの全体公開の配信から切り抜いています. 音声の利用は各自の責任でお願いします."
             }
