@@ -12,16 +12,13 @@ import * as React from "react";
 import MyAppBar from "./MyAppBar";
 import MyTabs from "./MyTabs";
 import VoiceCardList from "./VoiceCardList";
-
+import TeamHeader from "./TeamHeader";
 // assets
 import { myTheme, myPalette } from "./theme";
 import voiceData from "./assets/voices.json";
 
 // icons
-import { QuestionMark as QuestionMarkIcon } from "@mui/icons-material";
-import QueryStatsIcon from "@mui/icons-material/QueryStats";
-import CollectionsIcon from "@mui/icons-material/Collections";
-import HubIcon from "@mui/icons-material/Hub";
+import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 
 function App() {
   const [theme, setTheme] = React.useState(
@@ -63,35 +60,38 @@ function App() {
             onToggleTheme={() => toggleTheme(theme)}
             avatarUrl={""}
           />
-          {/* Banner/Header Image */}
-          {/* https://jp.cyberlink.com/blog/photoeditor/1755/best-photo-software-to-make-youtube-banners#:~:text=YouTube%20ヘッダー・バナーサイズと作成時の注意点,-ヘッダー・バナー作成&text=以下の図のよう,のサイズで作ります%E3%80%82 */}
-          {/* https://stackoverflow.com/questions/61263669/does-material-ui-have-an-image-component */}
-          {/* <Box
-            component="img"
-            sx={{
-              aspectRatio: { xs: 1546 / 423, md: 1855 / 423, lg: 2560 / 423 },
-              width: "100%",
-              objectFit: "cover",
-              borderRadius: 4,
-            }}
-            alt="Channel Art"
-            src={profile.header_image}
-          /> */}
 
-          {/* <TeamHeader
-            team_name={profile.team_name}
-            user_name={profile.user_name}
-            avatar_img={profile.avatar_image}
-            description={profile.description}
-            socials={profile.socials}
+          <TeamHeader
+            team_name={"Leona Button"}
+            user_name={""}
+            avatar_img={
+              "https://dummyimage.com/200x200/fc9a07/2b2b2b&text=Leona"
+            }
+            description={
+              "Leona Buttonはしぐれういボタンに触発されて開発した, Re:AcT所属のVtuber獅子神レオナさんの音声切り抜きを集めたサイトです. 音声はyoutubeの全体公開の配信から切り抜いています. 音声の利用は各自の責任でお願いします."
+            }
+            socials={[
+              {
+                name: "YouTube-shishigami_leona",
+                link: "https://www.youtube.com/@Leona_Shishigami",
+                badge:
+                  "https://img.shields.io/badge/レオナちゃんねる-orange?style=for-the-badge&logo=youtube",
+              },
+              {
+                name: "shigure_ui_button",
+                link: "https://leiros.cloudfree.jp/usbtn/usbtn.html",
+                badge:
+                  "https://img.shields.io/badge/しぐれういボタン-BE3D47?style=for-the-badge&logo=youtube",
+              },
+            ]}
             key={"team_header"}
-          /> */}
+          />
 
           <MyTabs
             key={"my_tabs"}
             items={[
               {
-                icon: <CollectionsIcon fontSize="small" />,
+                icon: <LibraryMusicIcon fontSize="small" />,
                 label: "Voices",
                 content: <VoiceCardList voices={voiceData.voices} />,
               },

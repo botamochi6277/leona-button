@@ -80,12 +80,12 @@ const VoiceCard = (props: { voice: Voice }) => {
   const voice = props.voice;
 
   const audio = new Audio(`voices/${voice.file_name}`);
-
   const [audioPlaying, setAudioPlaying] = React.useState(false);
+  const [isAudioError, setIsAudioError] = React.useState(false);
 
   const buttonSx = {
     ...(audioPlaying && {
-      bgcolor: "success.main",
+      bgcolor: "primary.main",
       "&:hover": {
         bgcolor: "secondary.main",
       },
@@ -95,9 +95,12 @@ const VoiceCard = (props: { voice: Voice }) => {
   React.useEffect(() => {
     if (audioPlaying) {
       audio?.play().catch(() => {
+        setIsAudioError(true);
+        setAudioPlaying(false);
         throw new Error(`${voice.file_name} cannot be played`);
       });
     } else {
+      setIsAudioError(false);
       audio?.pause();
     }
   }, [audio, audioPlaying]);
@@ -118,7 +121,7 @@ const VoiceCard = (props: { voice: Voice }) => {
     <Box sx={{ position: "relative" }}>
       <Fab
         aria-label="save"
-        color="primary"
+        color={isAudioError ? "error" : "primary"}
         sx={buttonSx}
         size="small"
         onClick={() => {
