@@ -37,7 +37,10 @@ const OrderButtons = (props: {
   return buttons;
 };
 
-export default function VoiceCardList(props: { voices: Voice[] }) {
+export default function VoiceCardList(props: {
+  voices: Voice[];
+  videos: Video[];
+}) {
   const [order, setOrder] = React.useState("name");
 
   const mySort = (a: Voice, b: Voice, order: string) => {
@@ -57,10 +60,15 @@ export default function VoiceCardList(props: { voices: Voice[] }) {
         return 1;
     }
   };
+
   const items = props.voices
     .sort((a, b) => mySort(a, b, order))
-    .map((p) => {
-      return <VoiceCard voice={p} />;
+    .map((voice) => {
+      const filteredVideo = props.videos.find((v) => {
+        return voice.url.includes(v.url);
+      });
+
+      return <VoiceCard voice={voice} video={filteredVideo} />;
     });
 
   return (

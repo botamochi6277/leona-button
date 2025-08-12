@@ -93,7 +93,12 @@ function App() {
               {
                 icon: <LibraryMusicIcon fontSize="small" />,
                 label: "Voices",
-                content: <VoiceCardList voices={voiceData.voices} />,
+                content: (
+                  <VoiceCardList
+                    voices={voiceData.voices}
+                    videos={voiceData.videos}
+                  />
+                ),
               },
             ]}
           />

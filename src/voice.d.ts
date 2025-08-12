@@ -6,3 +6,11 @@ type Voice = {
     url: string;
     tags: string[];
 }
+
+type Video = {
+    id: string;
+    title: string;
+    url: string;
+    date: string;
+    tags: string[];
+}

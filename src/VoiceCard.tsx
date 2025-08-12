@@ -4,21 +4,29 @@ import {
   Card,
   Box,
   Chip,
+  Button,
   IconButton,
   CardHeader,
   CardActions,
+  CardContent,
+  Collapse,
+  Typography,
 } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Fab from "@mui/material/Fab";
 
 // icons
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 
 import TagIcon from "@mui/icons-material/Tag";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
-import { PlayArrow as PlayArrowIcon } from "@mui/icons-material";
+import {
+  PlayArrow as PlayArrowIcon,
+  ExpandMore as ExpandMoreIcon,
+  ExpandLess as ExpandLessIcon,
+} from "@mui/icons-material";
 
 const ChipsBox = (props: {
   items?: string[];
@@ -76,12 +84,17 @@ const ChipsBox = (props: {
   );
 };
 
-const VoiceCard = (props: { voice: Voice }) => {
+const VoiceCard = (props: { voice: Voice; video?: Video }) => {
   const voice = props.voice;
 
   const audio = new Audio(`voices/${voice.file_name}`);
   const [audioPlaying, setAudioPlaying] = React.useState(false);
   const [isAudioError, setIsAudioError] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   const buttonSx = {
     ...(audioPlaying && {
@@ -153,21 +166,7 @@ const VoiceCard = (props: { voice: Voice }) => {
       key={`${voice.name}-card`}
       variant="outlined"
     >
-      <CardHeader
-        title={voice.text}
-        avatar={btn}
-        action={
-          <IconButton
-            aria-label="play"
-            href={voice.url}
-            target="_blank"
-            rel="noopener"
-            color="secondary"
-          >
-            <LiveTvIcon color="secondary" />
-          </IconButton>
-        }
-      />
+      <CardHeader title={voice.text} avatar={btn} />
       {/* <CardContent>
         <CardMedia
           component={"audio"}
@@ -179,7 +178,30 @@ const VoiceCard = (props: { voice: Voice }) => {
 
       <CardActions>
         <ChipsBox items={voice.tags} icon={<TagIcon />} color="secondary" />
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1 }} // to fill the space
+        ></Typography>
+        <IconButton size="small" color="secondary" onClick={handleExpandClick}>
+          {expanded ? <ExpandMoreIcon /> : <ExpandLessIcon />}
+        </IconButton>
       </CardActions>
+
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Button
+            variant="outlined"
+            size="small"
+            href={voice.url}
+            target="_blank"
+            rel="noopener"
+            startIcon={<LiveTvIcon />}
+          >
+            {props.video ? props.video?.title : "Video not found"}
+          </Button>
+        </CardContent>
+      </Collapse>
     </Card>
   );
 };
