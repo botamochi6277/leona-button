@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     name: build page and deploy
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
       - name: download file
         run: |
           curl -L https://drive.usercontent.google.com/u/0/uc?id=1dg9SV3048uhrpiV90zyh1ysu9QSRRRMV -o voices.zip
           unzip voices.zip -d public/
           rm voices.zip
-      - name: Checkout Repository
-        uses: actions/checkout@v3
       - name: setup nodejs
         run: |
           npm install
