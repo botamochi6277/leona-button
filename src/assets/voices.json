@@ -1,6 +1,7 @@
 {
     "voices": [
         {
+            "id": 1,
             "name": "konnichiwa_konbanwa_ohayo",
             "file_name": "konnichiwa_konbanwa_ohayo.mp3",
             "text": "こんにちは、こんばんは、おはようございま~~~す",
@@ -10,6 +11,7 @@
             ]
         },
         {
+            "id": 2,
             "name": "react_shozoku_no",
             "file_name": "react_shozoku_no.mp3",
             "text": "Re:AcT所属のVtuber",
@@ -19,6 +21,7 @@
             ]
         },
         {
+            "id": 3,
             "name": "shishigami_leona_deeeeesu",
             "file_name": "shishigami_leona_deeeeesu.mp3",
             "text": "獅子神レオナで~~~す!",
@@ -28,6 +31,7 @@
             ]
         },
         {
+            "id": 4,
             "name": "ano_mieru_yama_wo_kezutte",
             "file_name": "ano_mieru_yama_wo_kezutte.mp3",
             "text": "あの見える山を削っていきたいと思います",
@@ -37,6 +41,7 @@
             ]
         },
         {
+            "id": 5,
             "name": "chittyakunai",
             "file_name": "chittyakunai.mp3",
             "text": "ちっちゃくない?",
@@ -46,6 +51,7 @@
             ]
         },
         {
+            "id": 6,
             "name": "motto_ageteyaro",
             "file_name": "motto_ageteyaro.mp3",
             "text": "もっとあげてやろう",
@@ -55,6 +61,7 @@
             ]
         },
         {
+            "id": 7,
             "name": "hi_ok",
             "file_name": "hi_ok.mp3",
             "text": "はい、OK~!",
@@ -64,6 +71,7 @@
             ]
         },
         {
+            "id": 8,
             "name": "abunai",
             "file_name": "abunai.mp3",
             "text": "あぶない!",
@@ -73,6 +81,7 @@
             ]
         },
         {
+            "id": 9,
             "name": "kyoufu_tte_sugu_sokoni",
             "file_name": "kyoufu_tte_sugu_sokoni.mp3",
             "text": "恐怖ってすぐそこにあったんだ",
@@ -82,6 +91,7 @@
             ]
         },
         {
+            "id": 10,
             "name": "ame_ga_futte_kimashitayo",
             "file_name": "ame_ga_futte_kimashitayo.mp3",
             "text": "雨が降ってきましたよ",
@@ -91,6 +101,7 @@
             ]
         },
         {
+            "id": 11,
             "name": "nante_osoroshii_basho_nanda",
             "file_name": "nante_osoroshii_basho_nanda.mp3",
             "text": "なんて恐ろしい場所なんだ",
@@ -100,6 +111,7 @@
             ]
         },
         {
+            "id": 12,
             "name": "kitaaaa",
             "file_name": "kitaaaa.mp3",
             "text": "きたあああああああああ",
@@ -109,15 +121,17 @@
             ]
         },
         {
+            "id": 13,
             "name": "dansa_ga_areba_zenbu_yama",
             "file_name": "dansa_ga_areba_zenbu_yama.mp3",
-            "text": "段差があれば全部山",
+            "text": "段差があれば全部山じゃね",
             "url": "https://www.youtube.com/watch?v=XTS0IEd-R3o&t=1h21m15s",
             "tags": [
                 "minecraft"
             ]
         },
         {
+            "id": 14,
             "name": "ehho_ehho",
             "file_name": "ehho_ehho.mp3",
             "text": "ｴｯﾎｴｯﾎ",
@@ -127,6 +141,7 @@
             ]
         },
         {
+            "id": 15,
             "name": "gomenne",
             "file_name": "gomenne.mp3",
             "text": "ごめんね",
@@ -136,6 +151,7 @@
             ]
         },
         {
+            "id": 16,
             "name": "yononaka_niha_ironna_kyun",
             "file_name": "yononaka_niha_ironna_kyun.mp3",
             "text": "世の中にはいろんなキュンキュンがありまして",
@@ -145,6 +161,7 @@
             ]
         },
         {
+            "id": 17,
             "name": "atta_kiga_shitan_dakedo",
             "file_name": "atta_kiga_shitan_dakedo.mp3",
             "text": "あった気がしたんだけど...木が...",
@@ -155,6 +172,7 @@
             ]
         },
         {
+            "id": 18,
             "name": "omoshiro",
             "file_name": "omoshiro.mp3",
             "text": "おもしろw",
@@ -164,6 +182,7 @@
             ]
         },
         {
+            "id": 19,
             "name": "gaman_shina",
             "file_name": "gaman_shina.mp3",
             "text": "我慢しな",
@@ -173,30 +192,33 @@
             ]
         },
         {
-            "name": "shishigami_leona_desu_2",
-            "file_name": "shishigami_leona_desu_2.mp3",
-            "text": "獅子神レオナです!",
-            "url": "https://www.youtube.com/watch?v=zdtHaG42jEc&t=4m45s",
-            "tags": [
-                "greeting"
-            ]
-        },
-        {
+            "id": 20,
             "name": "good_morning",
             "file_name": "good_morning.mp3",
             "text": "グッドモーニング!",
-            "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk=3m14s",
+            "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk&t=3m14s",
             "tags": [
                 "greeting"
             ]
         },
         {
+            "id": 21,
             "name": "zakozako",
             "file_name": "zakozako.mp3",
             "text": "ザコザコザコザコ......",
             "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk&t=30m31s",
             "tags": [
                 "mimukawa"
+            ]
+        },
+        {
+            "id": 22,
+            "name": "gambaritamae",
+            "file_name": "gambaritamae.mp3",
+            "text": "がんばりたまえ",
+            "url": "https://www.youtube.com/watch?v=UC7Fn1s2bDk&t=1h17m13s",
+            "tags": [
+                "encouragement"
             ]
         }
     ],

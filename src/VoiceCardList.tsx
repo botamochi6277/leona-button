@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 // icons
-import { Abc as AbcIcon } from "@mui/icons-material";
+import { Abc as AbcIcon, Pin as PinIcon } from "@mui/icons-material";
 
 // assets
 
@@ -38,12 +38,12 @@ const OrderButtons = (props: {
 };
 
 export default function VoiceCardList(props: { voices: Voice[] }) {
-  const [order, setOrder] = React.useState("ids");
+  const [order, setOrder] = React.useState("name");
 
   const mySort = (a: Voice, b: Voice, order: string) => {
     switch (order) {
-      // case "ids":
-      //   return a.id - b.id; // decrease
+      case "ids":
+        return a.id - b.id; // decrease
       case "name":
         return a.text.localeCompare(b.text, "ja", {
           numeric: true,
@@ -90,7 +90,7 @@ export default function VoiceCardList(props: { voices: Voice[] }) {
             currentOrder={order}
             setOrder={setOrder}
             items={[
-              // { order: "ids", icon: <PinIcon /> },
+              { order: "ids", icon: <PinIcon /> },
               // { order: "views", icon: <VisibilityIcon /> },
               // { order: "goods", icon: <ThumbUpIcon /> },
               { order: "name", icon: <AbcIcon /> },
