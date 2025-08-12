@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: download file
         run: |
-          curl -L https://github.com/user-attachments/files/21732707/leona-voices-20250812.zip -o voices.zip
-          unzip voices.zip -d public/voices/
+          curl -L https://drive.usercontent.google.com/u/0/uc?id=1dg9SV3048uhrpiV90zyh1ysu9QSRRRMV -o voices.zip
+          unzip voices.zip -d public/
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: setup nodejs
