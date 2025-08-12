@@ -1,0 +1,28 @@
+name: jobs to build and deploy page
+on:
+  push:
+    branches: [main]
+
+jobs:
+  paging_jobs:
+    runs-on: ubuntu-latest
+    name: build page and deploy
+    steps:
+      - name: download file
+        run: |
+          curl -L https://github.com/user-attachments/files/21732923/voices.tar.gz -o voices.tar.gz
+          mkdir -p ./public/voices
+          tar -zxvf voices.tar.gz -C ./public/voices
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: setup nodejs
+        run: |
+          npm install
+      - name: build pages
+        run: |
+          npm run build
+      - name: Deploy pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: "dist"
