@@ -7,10 +7,16 @@ import {
   ListItem,
   ListItemText,
   Grid,
+  Chip,
+  Stack,
 } from "@mui/material";
 
 // icons
-import { Abc as AbcIcon, Pin as PinIcon } from "@mui/icons-material";
+import {
+  Abc as AbcIcon,
+  Pin as PinIcon,
+  Remove as RemoveIcon,
+} from "@mui/icons-material";
 
 // assets
 
@@ -41,7 +47,16 @@ export default function VoiceCardList(props: {
   voices: Voice[];
   videos: Video[];
 }) {
-  const [order, setOrder] = React.useState("name");
+  const [order, setOrder] = React.useState("ids");
+  const [filteringTags, setFilteringTags] = React.useState<string[]>([]);
+
+  const addFilteringTag = (tag: string) => {
+    setFilteringTags([...filteringTags, tag]);
+  };
+
+  const removeFilteringTag = (tag: string) => {
+    setFilteringTags(filteringTags.filter((t) => t !== tag));
+  };
 
   const mySort = (a: Voice, b: Voice, order: string) => {
     switch (order) {
@@ -62,13 +77,25 @@ export default function VoiceCardList(props: {
   };
 
   const items = props.voices
+    .filter((voice) => {
+      if (filteringTags.length === 0) {
+        return true;
+      }
+      return filteringTags.every((tag) => voice.tags.includes(tag));
+    })
     .sort((a, b) => mySort(a, b, order))
     .map((voice) => {
       const filteredVideo = props.videos.find((v) => {
         return voice.url.includes(v.url);
       });
 
-      return <VoiceCard voice={voice} video={filteredVideo} />;
+      return (
+        <VoiceCard
+          voice={voice}
+          video={filteredVideo}
+          addTagHandler={addFilteringTag}
+        />
+      );
     });
 
   return (
@@ -88,7 +115,20 @@ export default function VoiceCardList(props: {
           src={`https://custom-icon-badges.demolab.com/badge/stackchans-${items.length}-blue.svg?logo=people&logoColor=gray&style=social`}
           key={"counter"}
         /> */}
-        <Typography>{items.length} voices are in this page.</Typography>
+
+        <Box>
+          <Stack direction="row" spacing={1}>
+            {filteringTags.map((tag) => (
+              <Chip
+                label={tag}
+                icon={<RemoveIcon />}
+                onClick={() => {
+                  removeFilteringTag(tag);
+                }}
+              />
+            ))}
+          </Stack>
+        </Box>
 
         {/* sorting radio-like buttons */}
 

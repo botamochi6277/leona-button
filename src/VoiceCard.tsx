@@ -41,6 +41,7 @@ const ChipsBox = (props: {
     | "success"
     | "warning";
   breakpoint?: number;
+  onClick?: (s: string) => void;
 }) => {
   const [open, setOpen] = React.useState(false);
   if (!props.items) {
@@ -61,6 +62,11 @@ const ChipsBox = (props: {
           color={props.color}
           variant="outlined"
           sx={{ margin: 0.5, fontSize: 11 }}
+          onClick={() => {
+            if (props.onClick) {
+              props.onClick(m);
+            }
+          }}
         />
       ))}
       {open ? (
@@ -84,7 +90,11 @@ const ChipsBox = (props: {
   );
 };
 
-const VoiceCard = (props: { voice: Voice; video?: Video }) => {
+const VoiceCard = (props: {
+  voice: Voice;
+  video?: Video;
+  addTagHandler?: (tag: string) => void;
+}) => {
   const voice = props.voice;
 
   const audio = new Audio(`voices/${voice.file_name}`);
@@ -177,7 +187,12 @@ const VoiceCard = (props: { voice: Voice; video?: Video }) => {
       </CardContent> */}
 
       <CardActions>
-        <ChipsBox items={voice.tags} icon={<TagIcon />} color="secondary" />
+        <ChipsBox
+          items={voice.tags}
+          icon={<TagIcon />}
+          color="secondary"
+          onClick={props.addTagHandler}
+        />
         <Typography
           variant="h6"
           component="div"
